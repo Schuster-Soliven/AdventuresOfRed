@@ -10,18 +10,19 @@ public class Player : MonoBehaviour
     [Range(0,100)]
     float moveSpeed = 2.5f;
     Vector2 moveDir = Vector2.zero;
-    Rigidbody2D rb2d;
+    Rigidbody2D protag;
     [SerializeField]
     public float health = 1;
+    public float jumpspd = 8f;
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        protag = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb2d.MovePosition(rb2d.position + moveDir * moveSpeed * Time.deltaTime * Time.timeScale);
+        protag.MovePosition(protag.position + moveDir * moveSpeed * Time.deltaTime * Time.timeScale);
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
