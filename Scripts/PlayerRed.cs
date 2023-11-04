@@ -41,10 +41,12 @@ public class PlayerRed : MonoBehaviour
         if (direction > 0f)
         {
             player.velocity = new Vector2(direction * speed, player.velocity.y);
+            transform.localScale = new Vector2(14, 14);
         }
         else if (direction < 0f)
         {
             player.velocity = new Vector2(direction * speed, player.velocity.y);
+             transform.localScale = new Vector2(-14, 14);
         }
         else
         {
