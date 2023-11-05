@@ -16,6 +16,10 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Going to Level 3");
         SceneManager.LoadScene(3);
     }
+    public void Settings () {
+        Debug.Log("Going to Level 3");
+        SceneManager.LoadScene(4);
+    }
     public void QuitGame () {
         Debug.Log("Quit");
         Application.Quit();

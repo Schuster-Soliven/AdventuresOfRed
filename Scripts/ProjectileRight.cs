@@ -24,5 +24,6 @@ public class ProjectileR : MonoBehaviour
             other.gameObject.GetComponent<Player>().health -= 1;
             Destroy(gameObject);
         }
+        
     }
 }
