@@ -36,17 +36,24 @@ public class PlayerRed : MonoBehaviour
         isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         height = Input.GetAxis("Vertical");
         direction = Input.GetAxis("Horizontal");
-
+        Vector3 localScale = transform.localScale;
 
         if (direction > 0f)
         {
             player.velocity = new Vector2(direction * speed, player.velocity.y);
-            transform.localScale = new Vector2(14, 14);
+            if (localScale.x < 0f) {
+                localScale.x *= -1;
+                transform.localScale = localScale;
+            }
         }
         else if (direction < 0f)
         {
             player.velocity = new Vector2(direction * speed, player.velocity.y);
-             transform.localScale = new Vector2(-14, 14);
+            if (localScale.x > 0f) {
+                localScale.x *= -1;
+                transform.localScale = localScale;
+            }
+            
         }
         else
         {
