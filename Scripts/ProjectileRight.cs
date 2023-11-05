@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ProjectileR : MonoBehaviour
 {
@@ -22,12 +23,13 @@ public class ProjectileR : MonoBehaviour
         }
     }
 
-     void OnTriggerEnter2D(Collider2D other) 
+     void OnCollisionEnter2D(Collision2D other) 
     {
         if (other.gameObject.CompareTag("Player")) 
         {
-            other.gameObject.GetComponent<Player>().health -= 1;
-            Destroy(gameObject);
+              //other.gameObject.GetComponent<Player>().health -= 1;
+            Debug.Log("Collision Triggered");
+            SceneManager.LoadScene(5);
         }
         if(other.gameObject.CompareTag("Wall"))
         {
