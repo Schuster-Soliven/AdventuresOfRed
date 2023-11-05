@@ -18,10 +18,17 @@ public class ProjectileL : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Player")) {
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.gameObject.CompareTag("Player")) 
+        {
             other.gameObject.GetComponent<Player>().health -= 1;
             Destroy(gameObject);
         }
+        if(other.gameObject.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
     }
+    
 }

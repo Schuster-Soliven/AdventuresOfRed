@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ProjectileR : MonoBehaviour
@@ -13,17 +14,24 @@ public class ProjectileR : MonoBehaviour
         // Vector2 direction = transform.right;
         rb.velocity = new Vector2(1, 0).normalized * force;
     }
-    void Update() {
+    void Update() 
+    {
         timer += Time.deltaTime;
         if (timer > 2) {
             Destroy(gameObject);
         }
     }
-    void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Player")) {
+
+     void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.gameObject.CompareTag("Player")) 
+        {
             other.gameObject.GetComponent<Player>().health -= 1;
             Destroy(gameObject);
         }
-        
+        if(other.gameObject.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
