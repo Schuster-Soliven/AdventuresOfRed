@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class ProjectileL : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -18,9 +18,16 @@ public class ProjectileL : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Player")) {
-            other.gameObject.GetComponent<Player>().health -= 1;
+    void OnCollisionEnter2D(Collision2D other) 
+    {
+        if (other.gameObject.CompareTag("Player")) 
+        {
+            //other.gameObject.GetComponent<Player>().health -= 1;
+            Debug.Log("Collision Triggered");
+            SceneManager.LoadScene(5);
+        }
+        if(other.gameObject.CompareTag("Wall"))
+        {
             Destroy(gameObject);
         }
     }

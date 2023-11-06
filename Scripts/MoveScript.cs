@@ -33,9 +33,11 @@ public class MoveScript : MonoBehaviour
 
         if (Vector2.Distance(transform.position, currentPoint.position) < .5f && currentPoint == pointB.transform) {
             anim.SetBool("isRunning", false);
+            speed = 0f;
             timer += Time.deltaTime;
-            if (timer > 4) {
-                timer = 0;
+            if (timer > 4f) {
+                speed = 2f;
+                timer = 0f;
                 anim.SetBool("isRunning", true);
                 flip();
                 currentPoint = pointA.transform;
@@ -43,9 +45,11 @@ public class MoveScript : MonoBehaviour
         }
         if (Vector2.Distance(transform.position, currentPoint.position) < .5f && currentPoint == pointA.transform) {
             anim.SetBool("isRunning", false);
+            speed = 0f;
             timer += Time.deltaTime;
-            if (timer > 4) {
-                timer = 0;
+            if (timer > 4f) {
+                speed = 2f;
+                timer = 0f;
                 anim.SetBool("isRunning", true);
                 flip();
                 currentPoint = pointB.transform;
