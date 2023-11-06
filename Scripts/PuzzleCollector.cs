@@ -22,9 +22,13 @@ public class PuzzleCollector : MonoBehaviour
     public void IncreasePiece (int v) {
         currentPieces += v;
         pieceText.text = "Pieces Collected: " + currentPieces.ToString();
-        if (currentPieces >= TotalPieces) {
-            Debug.Log("Going to Level 1");
-            SceneManager.LoadScene(4);
+        if (currentPieces >= TotalPieces ) {
+            if (SceneManager.GetActiveScene().buildIndex == 3) {
+                SceneManager.LoadScene("VictoryScreen");
+            } else {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            
         }
     } 
 }
