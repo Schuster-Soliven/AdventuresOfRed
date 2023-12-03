@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2145612648245968893}
   - component: {fileID: 2249554540561122202}
   - component: {fileID: 3825662164069518576}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WhiteEnemyR
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,7 +174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5086410452158998773}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ProjPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,6 +219,10 @@ PrefabInstance:
     - target: {fileID: 1557223655814029989, guid: 42626b59ff24cd5468da30de16c17902, type: 3}
       propertyPath: m_Name
       value: ProjectileR
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557223655814029989, guid: 42626b59ff24cd5468da30de16c17902, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9121774140486943130, guid: 42626b59ff24cd5468da30de16c17902, type: 3}
       propertyPath: m_LocalPosition.x

@@ -63,6 +63,7 @@ public class PlayerRed : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isTouchingGround)
         {
             player.velocity = new Vector2(player.velocity.x, jumpSpeed);
+            // add sound here
         }
         playerAnimation.SetBool("OnGround", isTouchingGround);
         playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
