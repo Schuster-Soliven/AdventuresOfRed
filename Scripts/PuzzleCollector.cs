@@ -11,20 +11,28 @@ public class PuzzleCollector : MonoBehaviour
     public TMP_Text pieceText;
     public int currentPieces = 0;
     public int TotalPieces = 1;
-    
+    AudioSource collect;
+
     void Awake() {
         instance = this;
     }
     void Start() {
         pieceText.text = "Pieces Collected: " + currentPieces.ToString();
+        collect = GetComponent<AudioSource>();
     } 
 
-    public void IncreasePiece (int v) {
+    public void IncreasePiece (int v) 
+    {
         currentPieces += v;
+        collect.Play();
         pieceText.text = "Pieces Collected: " + currentPieces.ToString();
-        if (currentPieces >= TotalPieces) {
-            Debug.Log("Going to Level 1");
-            SceneManager.LoadScene(4);
+        if (currentPieces >= TotalPieces ) {
+            if (SceneManager.GetActiveScene().buildIndex == 3) {
+                SceneManager.LoadScene("VictoryScreen");
+            } else {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            
         }
     } 
 }
