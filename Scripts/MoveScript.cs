@@ -35,7 +35,7 @@ public class MoveScript : MonoBehaviour
             anim.SetBool("isRunning", false);
             speed = 0f;
             timer += Time.deltaTime;
-            if (timer > 4f) {
+            if (timer > 2f) {
                 speed = 2f;
                 timer = 0f;
                 anim.SetBool("isRunning", true);
@@ -47,7 +47,7 @@ public class MoveScript : MonoBehaviour
             anim.SetBool("isRunning", false);
             speed = 0f;
             timer += Time.deltaTime;
-            if (timer > 4f) {
+            if (timer > 2f) {
                 speed = 2f;
                 timer = 0f;
                 anim.SetBool("isRunning", true);

@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AoR Puzzle Piece
       objectReference: {fileID: 0}
+    - target: {fileID: 7712378441630607737, guid: 5085af8f9eb6fab40a011ad6c48ec2d6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

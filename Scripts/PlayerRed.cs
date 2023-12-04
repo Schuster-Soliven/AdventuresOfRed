@@ -15,7 +15,7 @@ public class PlayerRed : MonoBehaviour
     private float height = 0f;
     private float direction = 0f;
     Rigidbody2D player;
-
+    AudioSource sound;
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundLayer;
@@ -23,11 +23,14 @@ public class PlayerRed : MonoBehaviour
 
     private Animator playerAnimation;
 
+
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
         playerAnimation = GetComponent<Animator>();
+        sound = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -63,6 +66,9 @@ public class PlayerRed : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isTouchingGround)
         {
             player.velocity = new Vector2(player.velocity.x, jumpSpeed);
+            // add sound here
+            sound.Play();
+            
         }
         playerAnimation.SetBool("OnGround", isTouchingGround);
         playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
